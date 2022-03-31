@@ -1,0 +1,1 @@
+export const PS2_ENVIRONMENT = 'PS2_ENVIRONMENT';
