@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo
+    ports:
+      - 27017:27017
+  ps2collector:
+    build: .
+    depends_on:
+      - mongo
+    tty: true
+    environment:
+      - CENSUS_SERVICE_ID
+      - MONGODB_URL=mongodb://mongo:27017
+      - MONGODB_DATABASE=census

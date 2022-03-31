@@ -2,3 +2,6 @@
 .env
 .eslintrc.js
 .prettierrc
+/dist
+/test
+docker-compose.yml
