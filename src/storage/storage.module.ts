@@ -26,7 +26,19 @@ export class StorageModule implements OnApplicationBootstrap {
       fromEvent(this.ps4euClient, 'ps2Event'),
       fromEvent(this.ps4usClient, 'ps2Event'),
     ).subscribe((event: PS2Event) => {
-      void this.db.collection(event.event_name).insertOne(event.raw);
+      void this.db
+        .collection(`${event.world_id}:${event.event_name}`)
+        .insertOne(event.raw);
+    });
+
+    merge(
+      fromEvent(this.pcClient, 'serviceState'),
+      fromEvent(this.ps4euClient, 'serviceState'),
+      fromEvent(this.ps4usClient, 'serviceState'),
+    ).subscribe(([worldId, state]) => {
+      void this.db
+        .collection(`serviceState`)
+        .insertOne({ worldId, state, at: Math.round(Date.now() / 1000) });
     });
   }
 }
