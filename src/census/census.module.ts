@@ -18,6 +18,15 @@ const environments = ['ps2', 'ps2ps4eu', 'ps2ps4us'];
         const client = new CensusClient(
           process.env.CENSUS_SERVICE_ID,
           <PS2Environment>environment,
+          {
+            streamManager: {
+              subscription: {
+                eventNames: ['all'],
+                characters: ['all'],
+                worlds: ['all'],
+              },
+            },
+          },
         );
         const logger = new Logger(environment);
 
@@ -65,12 +74,6 @@ export class CensusModule
     const close = fromEvent(client, 'disconnected').pipe(share(), first());
 
     await client.watch();
-
-    await client.subscribe({
-      eventNames: ['all'],
-      characters: ['all'],
-      worlds: ['all'],
-    });
 
     timer(CensusModule.RESUBSCRIBE_INTERVAL, CensusModule.RESUBSCRIBE_INTERVAL)
       .pipe(takeUntil(close))

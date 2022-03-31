@@ -28,11 +28,11 @@ import { Db, MongoClient } from 'mongodb';
 export class MongoModule implements OnModuleInit, OnModuleDestroy {
   constructor(private readonly mongodb: MongoClient) {}
 
-  async onModuleDestroy(): Promise<void> {
+  async onModuleInit(): Promise<void> {
     await this.mongodb.connect();
   }
 
-  async onModuleInit(): Promise<void> {
+  async onModuleDestroy(): Promise<void> {
     await this.mongodb.close();
   }
 }
