@@ -21,20 +21,35 @@ const environments = ['ps2', 'ps2ps4eu', 'ps2ps4us'];
           {
             streamManager: {
               subscription: {
-                eventNames: ['all','ContinentLock','AchievementEarned',"BattleRankUp",
-			"Death",
-			"FacilityControl",
-			"GainExperience",
-			"ItemAdded",
-			"MetagameEvent",
-			"PlayerFacilityCapture",
-			"PlayerFacilityDefend",
-			"PlayerLogin",
-			"PlayerLogout",
-			"SkillAdded",
-			"VehicleDestroy"],
-                 characters: ['all'],
-                worlds: ['all','1','10','13','17','19','40','1000','2000'],
+                eventNames: [
+                  'all',
+                  'ContinentLock',
+                  'AchievementEarned',
+                  'BattleRankUp',
+                  'Death',
+                  'FacilityControl',
+                  'GainExperience',
+                  'ItemAdded',
+                  'MetagameEvent',
+                  'PlayerFacilityCapture',
+                  'PlayerFacilityDefend',
+                  'PlayerLogin',
+                  'PlayerLogout',
+                  'SkillAdded',
+                  'VehicleDestroy',
+                ],
+                characters: ['all'],
+                worlds: [
+                  'all',
+                  '1',
+                  '10',
+                  '13',
+                  '17',
+                  '19',
+                  '40',
+                  '1000',
+                  '2000',
+                ],
               },
             },
           },
@@ -45,7 +60,10 @@ const environments = ['ps2', 'ps2ps4eu', 'ps2ps4us'];
           .on('ready', () => logger.log('Connected'))
           .on('reconnecting', () => logger.log('Reconnecting'))
           .on('disconnected', () => logger.log('Disconnected'))
-          .on('warn', (error) => logger.warn(error));
+          .on('warn', (error) => logger.warn(error))
+          .on('subscribed', (sub) =>
+            logger.log(`Subbed: ${JSON.stringify(sub)}`),
+          );
 
         return client;
       },

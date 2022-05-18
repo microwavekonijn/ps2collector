@@ -1373,14 +1373,6 @@ asynckit@^0.4.0:
   resolved "https://registry.yarnpkg.com/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
   integrity sha1-x57Zf380y48robyXkLzDZkdLS3k=
 
-axios@0.27.0:
-  version "0.27.0"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-0.27.0.tgz#973ca980dee9077410189340390ea77964af6b29"
-  integrity sha512-XV/WrPxXfzgZ8j4lcB5i6LyaXmi90yetmV/Fem0kmglGx+mpY06CiweL3YxU6wOTNLmqLUePW4G8h45nGZ/+pA==
-  dependencies:
-    follow-redirects "^1.14.9"
-    form-data "^4.0.0"
-
 axios@0.27.2:
   version "0.27.2"
   resolved "https://registry.yarnpkg.com/axios/-/axios-0.27.2.tgz#207658cc8621606e586c85db4b41a750e756d972"
@@ -4023,14 +4015,14 @@ proxy-addr@~2.0.7:
     forwarded "0.2.0"
     ipaddr.js "1.9.1"
 
-ps2census@^3.3.1:
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/ps2census/-/ps2census-3.4.0.tgz#c8770976315be5819d0ad38d8fa0ff933483bf21"
-  integrity sha512-zWcIoPvwDqETL/jhx7l1/q1RHzX2ngUmN45BKz+OG6ezfe7PLTNFh03tlgEy8RqvdtTZ2iA1s/dI5HWJLMXQ7Q==
+ps2census@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/ps2census/-/ps2census-4.0.2.tgz#b632a8bad5fb5e903107ef48d99f0e253d6b25a6"
+  integrity sha512-7PSQyeF5wtVEpc252eSti+p5AECrTb+KQbBp85MhvLNH23C1os/uOQQWied3SwzlHCl7tVhTkHeNmC3pI0E1HA==
   dependencies:
-    axios "0.27.0"
+    axios "0.27.2"
     eventemitter3 "^4.0.7"
-    ws "8.5.0"
+    ws "8.6.0"
   optionalDependencies:
     bufferutil "4.0.6"
     utf-8-validate "5.0.9"
@@ -5103,10 +5095,10 @@ write-file-atomic@^3.0.0:
     signal-exit "^3.0.2"
     typedarray-to-buffer "^3.1.5"
 
-ws@8.5.0:
-  version "8.5.0"
-  resolved "https://registry.yarnpkg.com/ws/-/ws-8.5.0.tgz#bfb4be96600757fe5382de12c670dab984a1ed4f"
-  integrity sha512-BWX0SWVgLPzYwF8lTzEy1egjhS4S4OEAHfsO8o65WOVsrnSRGaSiUaa9e0ggGlkMTtBlmOpEXiie9RUcBO86qg==
+ws@8.6.0:
+  version "8.6.0"
+  resolved "https://registry.yarnpkg.com/ws/-/ws-8.6.0.tgz#e5e9f1d9e7ff88083d0c0dd8281ea662a42c9c23"
+  integrity sha512-AzmM3aH3gk0aX7/rZLYvjdvZooofDu3fFOzGqcSnQ1tOcTWwhM/o+q++E8mAyVVIyUdajrkzWUGftaVSDLn1bw==
 
 ws@^7.4.6:
   version "7.5.7"
